@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Pravina Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .blog-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-date {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-title {
+            margin: 0.5rem 0;
+            font-size: 1.25rem;
+        }
+        
+        .blog-excerpt {
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .blog-post-header {
+            margin-bottom: 2rem;
+        }
+        
+        .blog-hero-image {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #6b7280;
+        }
+        
+        .blog-author {
+            margin-right: 1rem;
+        }
+        
+        .back-to-blogs {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: #4b5563;
+            text-decoration: none;
+        }
+        
+        .back-to-blogs:hover {
+            color: #3b82f6;
+        }
+        
+        .blog-image-1 { background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGFpfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); }
+        .blog-image-2 { background-image: url('https://images.unsplash.com/photo-1677442135968-6ca864147445?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fGFpfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); }
+        .blog-image-3 { background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHRlY2hub2xvZ3l8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'); }
+        .blog-image-4 { background-image: url('https://images.unsplash.com/photo-1581472723648-909f4851d4ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGFydGlmaWNpYWwlMjBpbnRlbGxpZ2VuY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'); }
+        .blog-image-5 { background-image: url('https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGFydGlmaWNpYWwlMjBpbnRlbGxpZ2VuY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'); }
+        .blog-image-6 { background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHRlY2hub2xvZ3l8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'); }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">PRAVINA</a>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="blog section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Blog Posts</h2>
+                <p>Insights and updates from our team</p>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image blog-image-1"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">July 15, 2023</div>
+                        <h3 class="blog-title">Introducing Vichar: The AI Chess Assistant</h3>
+                        <p class="blog-excerpt">Learn how our revolutionary AI assistant can help you improve your chess game with real-time analysis and personalized suggestions.</p>
+                        <a href="blog-post.html" class="link">Read more</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image blog-image-2"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">June 28, 2023</div>
+                        <h3 class="blog-title">The Future of AI in Game Analysis</h3>
+                        <p class="blog-excerpt">Exploring how artificial intelligence is revolutionizing how players analyze and improve their strategic gameplay across various gaming platforms.</p>
+                        <a href="blog-post.html" class="link">Read more</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image blog-image-3"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">June 10, 2023</div>
+                        <h3 class="blog-title">Building Ethical AI Systems</h3>
+                        <p class="blog-excerpt">Our approach to developing AI technologies that prioritize user privacy, fairness, and transparency in decision-making processes.</p>
+                        <a href="blog-post.html" class="link">Read more</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image blog-image-4"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">May 22, 2023</div>
+                        <h3 class="blog-title">Research Breakthrough in Natural Language Processing</h3>
+                        <p class="blog-excerpt">Our research team has achieved a significant breakthrough in natural language understanding with potential applications across industries.</p>
+                        <a href="blog-post.html" class="link">Read more</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image blog-image-5"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">May 5, 2023</div>
+                        <h3 class="blog-title">How Mango is Transforming Business Automation</h3>
+                        <p class="blog-excerpt">Case studies showcasing how our Smart Automation platform is helping businesses streamline operations and reduce manual workloads.</p>
+                        <a href="blog-post.html" class="link">Read more</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image blog-image-6"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">April 18, 2023</div>
+                        <h3 class="blog-title">Partnership Announcement with TechForward</h3>
+                        <p class="blog-excerpt">Details about our strategic partnership with TechForward and how this collaboration will expand our AI capabilities.</p>
+                        <a href="blog-post.html" class="link">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <a href="/">PRAVINA</a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#products">Products</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to our newsletter to receive the latest updates and news.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="button secondary">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pravina Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
